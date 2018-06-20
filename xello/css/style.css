@@ -33,6 +33,14 @@ h2 > span {
     font-weight:normal;
 }
 
+.badge-pill.badge-small {
+    height:18px;
+    width:18px;
+    font-size:0.75rem;
+    padding: 3px 0 0 0;
+    border:1px solid #333;
+}
+
 .header {
     padding-top:30px;
 }
@@ -89,6 +97,10 @@ nav.navbar {
 
 .creditsLeft {
     font-size:0.88rem; color:#878787;
+}
+
+.float-right.credit-prerequisite {
+    margin-top:-17px;
 }
 
 .numCredits {
