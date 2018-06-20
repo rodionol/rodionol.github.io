@@ -69,18 +69,22 @@ nav.navbar {
     width: 220px;
 }
 
-.progress-bar { background-color: #78c346; }
-.green { color: #78c346; }
-.progressstatus {font-weight:bold; font-size:0.88rem; color:#8d8d8d;}
+.progress-bar.w-50 {
+    background-color: #78c346;
+}
+
+.green {
+    color: #78c346;
+}
+.progressstatus {
+    font-size:0.85rem;
+    color:#8d8d8d;
+}
 
 .credits {
     font-size:0.8rem;
     margin-bottom:12px;
     color:#888888;
-}
-
-.course {
-
 }
 
 .creditsLeft {
@@ -140,8 +144,6 @@ button.btn-submit {
     font-weight:100;
     border:1px groove white;
 }
-
-
 
 .slider {
     -webkit-appearance: none;
