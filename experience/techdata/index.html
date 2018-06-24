@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lidia Rodionova - PORTFOLIO - Tech Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+	body, td, p, ul {font-family:Georgia, "Times New Roman", Times, serif;}
+	a:link {color: #b82201}     /* unvisited link */
+	a:visited {color: #b82201}  /* visited link */
+	a:hover {color: #66CC00;}   /* mouse over link */
+	a:active {color: #66CC00;}   /* selected link */
+
+	.redborder {border-collapse:collapse; border-style:solid; border-color:#B82201;}
+
+	body {margin-left:0px; margin-top:0px;}
+</style>
+<script type="text/javascript">
+	function NextSlide1(){
+	document.getElementById('thecontent').src = "images/browse_burloak.jpg"
+	}
+			
+	function NextSlide2(){
+	document.getElementById('thecontent').src = "images/browse_burloak2.jpg"
+	}
+	
+	function NextSlide3(){
+	document.getElementById('thecontent').src = "images/browse_burloak3.jpg"
+	}
+	var thetitle = new Array(10);
+	
+	thetitle[0] = ""
+	thetitle[1] = "Burloak Bowling and Billiards Promotional Flyers. 2006."	
+	thetitle[2] = "HP-PSG E-cast Redesign (Tech Data Report). 2008."	
+	thetitle[3] = "Resource Centre Redesigns. 2007."
+	thetitle[4] = "TechConnection Newsletter Redesign. 2007."
+	thetitle[5] = "Comfortek Heating and Air-Conditioning Inc. 2008."
+	thetitle[6] = "Eco-Technology Resource Centre. 2008."
+	thetitle[7] = "Notebook Central Resource Centre. 2008."
+	thetitle[8] = "HP Education Resource Centre. 2008."
+	thetitle[9] = "Tech Data Marketing Redesign. 2008."
+	thetitle[10] = "Cisco win a WII and MP3 Ad Campaigns.2008."		
+	
+	var thebigimg = new Array(10);
+	
+	thebigimg[0] = "images/white_square.gif"
+	thebigimg[1] = "images/burloak_square_big.jpg"
+	thebigimg[2] = "images/hppsg_square_big.jpg"
+	thebigimg[3] = "images/rs2007_square_big.jpg"
+	thebigimg[4] = "images/techconnection_square_big.jpg"
+	thebigimg[5] = "images/comfortek_square_big.jpg"
+	thebigimg[6] = "images/ecotech_square_big.jpg"
+	thebigimg[7] = "images/nbcentral_square_big.jpg"
+	thebigimg[8] = "images/hpedu_square_big.jpg"
+	thebigimg[9] = "images/tdmarketing09_square_big.jpg"	
+	thebigimg[10] = "images/cisco_square_big.jpg"
+	
+		
+	function theMenuRollover(thenum){
+	document.getElementById('project_description').innerHTML = thetitle[thenum];
+	document.getElementById('project_img').src = thebigimg[thenum];
+			if(thenum == 1){document.getElementById('burloak').src = "images/burloak_square.jpg" }
+				else{document.getElementById('burloak').src = "images/burloak_square_ds.jpg"}		
+			if(thenum == 2){document.getElementById('hppsg').src = "images/hppsg_square.jpg" }
+				else{document.getElementById('hppsg').src = "images/hppsg_square_ds.jpg"}
+			if(thenum == 3){document.getElementById('rs2007').src = "images/rs2007_square.jpg" }
+				else{document.getElementById('rs2007').src = "images/rs2007_square_ds.jpg"}
+			if(thenum == 4){document.getElementById('techconnection').src = "images/techconnection_square.jpg" }
+				else{document.getElementById('techconnection').src = "images/techconnection_square_ds.jpg"}
+			if(thenum == 5){document.getElementById('comfortek').src = "images/comfortek_square.jpg" }
+				else{document.getElementById('comfortek').src = "images/comfortek_square_ds.jpg"}
+			if(thenum == 6){document.getElementById('ecotech').src = "images/ecotech_square.jpg" }
+				else{document.getElementById('ecotech').src = "images/ecotech_square_ds.jpg"}
+			if(thenum == 7){document.getElementById('nbcentral').src = "images/nbcentral_square.jpg" }
+				else{document.getElementById('nbcentral').src = "images/nbcentral_square_ds.jpg"}
+			if(thenum == 8){document.getElementById('hpedu').src = "images/hpedu_square.jpg" }
+				else{document.getElementById('hpedu').src = "images/hpedu_square_ds.jpg"}
+			if(thenum == 9){document.getElementById('tdmarketing09').src = "images/tdmarketing09_square.jpg" }
+				else{document.getElementById('tdmarketing09').src = "images/tdmarketing09_square_ds.jpg"}
+			if(thenum == 10){document.getElementById('cisco').src = "images/cisco_square.jpg" }
+				else{document.getElementById('cisco').src = "images/cisco_square_ds.jpg"}
+	}
+	
+	</script>
+</head>
+<body>
+
+	<p align="center"><img src="images/contents_banner.gif" alt="" /></p>
+
+	<table border="1" cellpadding="0" cellspacing="0" align="center" style="border-collapse:collapse; border-style:solid; border-color:#B82201;">
+	  <tr>
+		<td class="redborder"><a href="burloak.html" onmouseover="theMenuRollover(1)"><img src="images/burloak_square_ds.jpg" width="142" height="142" border="0" id="burloak" alt="" /></a></td>
+		<td class="redborder"><a href="hppsg.html" onmouseover="theMenuRollover(2)"><img src="images/hppsg_square_ds.jpg" width="142" height="142" border="0" id="hppsg" alt="" /></a></td>
+		<td class="redborder"><a href="rs2007.html" onmouseover="theMenuRollover(3)"><img src="images/rs2007_square_ds.jpg" width="142" height="142" border="0" id="rs2007" alt="" /></a></td>
+		<td class="redborder"><a href="techconnection.html" onmouseover="theMenuRollover(4)"><img src="images/techconnection_square_ds.jpg" width="142" height="142" border="0" id="techconnection" alt="" /></a></td>
+		<td class="redborder"><a href="comfortek.html" onmouseover="theMenuRollover(5)"><img src="images/comfortek_square_ds.jpg" width="142" height="142" border="0" id="comfortek" alt="" /></a></td>
+		<td class="redborder"><a href="ecotech.html" onmouseover="theMenuRollover(6)"><img src="images/ecotech_square_ds.jpg" width="142" height="142" border="0"  id="ecotech" alt="" /></a></td>
+	  </tr>
+	  <tr>
+		<td class="redborder"><a href="nbcentral.html" onmouseover="theMenuRollover(7)"><img src="images/nbcentral_square_ds.jpg" width="142" height="142" border="0" id="nbcentral" alt="" /></a></td>
+		<td class="redborder"><a href="hpeducation.html" onmouseover="theMenuRollover(8)"><img src="images/hpedu_square_ds.jpg" width="142" height="142" border="0"  id="hpedu" alt="" /></a></td>
+		<td class="redborder"><a href="tdmarketing09.html" onmouseover="theMenuRollover(9)"><img src="images/tdmarketing09_square_ds.jpg" width="142" height="142" border="0"  id="tdmarketing09" alt="" /></a></td>
+		<td class="redborder"><a href="cisco.html" onmouseover="theMenuRollover(10)"><img src="images/cisco_square_ds.jpg" width="142" height="142" border="0"  id="cisco" alt="" /></a></td>
+		<td class="redborder" colspan="2" rowspan="2" bgcolor="#666666"><img src="images/white_square.gif" id="project_img" width="100%" height="100%" border="0" alt="" /></td>
+	  </tr>
+	  <tr>
+		<td class="redborder" align="right" style="font-weight:bold;" valign="bottom" colspan="4" height="142" id="project_description"><img src="images/white_square.gif" width="568" height="142" alt="" /></td> 
+	  </tr>
+	</table>
+
+
+</body>
+</html>
