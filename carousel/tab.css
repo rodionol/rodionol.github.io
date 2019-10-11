@@ -1,0 +1,100 @@
+.tab-page {
+	 overflow-x: visible;
+}
+ .bmo-tabs-wrap {
+	 overflow-x: scroll;
+	 white-space: nowrap;
+	 margin: 32px 0 0 0;
+	 transition: all 0.3s ease;
+	 -webkit-transition: all 0.3s ease;
+	 -moz-transition: all 0.3s ease;
+	 -webkit-overflow-scrolling: touch;
+	 -ms-overflow-style: none;
+	 overflow: -moz-scrollbars-none;
+	 scrollbar-width: none;
+	 scroll-behavior: smooth;
+	 position: relative;
+	/* for true centeredness when using "offsetLeft" */
+}
+ .bmo-tabs-wrap::-webkit-scrollbar {
+	 width: 0 !important;
+}
+ .bmo-tabs-wrap .tab-list {
+	 margin-bottom: 24px;
+}
+ .bmo-tabs-wrap .tab-list:before {
+	 content: '';
+	 display: inline-block;
+}
+ .bmo-tabs-wrap .tab-list::after {
+	 content: '';
+	 display: inline-block;
+}
+ .bmo-tabs-wrap .tab-list li {
+	 display: inline-block;
+	 font-size: 1.6rem;
+	 cursor: pointer;
+	 transition: all 0.3s ease;
+	 -webkit-transition: all 0.3s ease;
+	 -moz-transition: all 0.3s ease;
+	 font-family: 'heebo-medium';
+	 color: #646c76;
+	 padding: 8px 16px;
+	 position: relative;
+	 top: 4px;
+}
+ .bmo-tabs-wrap .tab-list li:first-of-type {
+	 margin-left: 2px;
+}
+ .bmo-tabs-wrap .tab-list li:focus {
+	 color: #0075be;
+	 outline: auto;
+	 outline-width: 1px;
+	 outline-color: #73c3eb;
+	 box-shadow: 0 0 4px 3px rgba(115, 195, 235, 0.35);
+}
+ .bmo-tabs-wrap .tab-list li:hover {
+	 color: #0075be;
+}
+ .bmo-tabs-wrap .tab-list li.active-tab-label {
+	 color: #001928;
+	 text-align: center;
+}
+ .bmo-tabs-wrap .tab-list li.active-tab-label .tab-indicator {
+	 background-color: #0075be;
+	 width: calc(100% + 32px);
+	 left: -16px;
+	 border-radius: 2px;
+}
+ .bmo-tabs-wrap .tab-list li .tab-indicator {
+	 display: block;
+	 position: relative;
+	 top: 8px;
+	 width: calc(100% + 34px);
+	 left: -17px;
+	 height: 4px;
+	 background-color: #d9dce1;
+}
+ .bmo-tabs-wrap .tab-list .tablist-guideline {
+	 height: 4px;
+	 background-color: #d9dce1;
+	 border-radius: 2px;
+	 position: relative;
+	 top: 48px;
+	 display: block;
+}
+ .tab-panel {
+	 transition: opacity 1.5s ease-out;
+	 display: none;
+	 opacity: 0;
+	 height: 0;
+	 overflow: hidden;
+}
+ .tab-panel.active-tab-content {
+	 opacity: 1;
+	 display: block;
+	 height: auto;
+	 font-size: 1.6rem;
+	 padding: 0 4px 0 0;
+}
+ 
