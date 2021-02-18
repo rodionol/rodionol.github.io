@@ -1,33 +1,661 @@
-<script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
-<script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
-<div id="mapdiv" style="width: 1000px; height: 450px;"></div>
-<div style="width: 1000px; font-size: 70%; padding: 5px 0; text-align: center; background-color: #535364; margin-top: 1px; color: #B4B4B7;"><a href="https://www.amcharts.com/visited_countries/" style="color: #B4B4B7;">Create your own visited countries map</a> or check out the <a href="https://www.amcharts.com/" style="color: #B4B4B7;">JavaScript Charts</a>.</div>
-<script type="text/javascript">
-var map = AmCharts.makeChart("mapdiv",{
-type: "map",
-theme: "dark",
-projection: "mercator",
-panEventsEnabled : true,
-backgroundColor : "#535364",
-backgroundAlpha : 1,
-zoomControl: {
-zoomControlEnabled : true
-},
-dataProvider : {
-map : "worldHigh",
-getAreasFromMap : true,
-areas :
-[]
-},
-areasSettings : {
-autoZoom : true,
-color : "#B4B4B7",
-colorSolid : "#84ADE9",
-selectedColor : "#84ADE9",
-outlineColor : "#666666",
-rollOverColor : "#9EC2F7",
-rollOverOutlineColor : "#000000"
-}
-});
-</script>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>TravelMap</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    <nav>
+        <ul id="sortByNav">
+            <li><a href="Javascript://" onclick="changeCountrySort('ByContinent')">By Continent</a></li>
+            <li><a href="Javascript://" onclick="changeCountrySort('ByAlphabet')">Alphabetical</a></li>
+            <li><a href="Javascript://" onclick="changeCountrySort('ByVisited')">Visited</a></li>
+        </ul>
+    </nav>
+
+    <section class="sortSection" id="ByContinent">
+        <h2>Countries by Continent</h2>
+        <h3>Africa</h3>
+            <ul>
+                <li>Algeria</li>
+                <li>Angola</li>
+                <li>Benin</li>
+                <li>Botswana</li>
+                <li>Burkina</li>
+                <li>Burundi</li>
+                <li>Cameroon</li>
+                <li>Cape Verde</li>
+                <li>Central African Republic</li>
+                <li>Chad</li>
+                <li>Comoros</li>
+                <li>Congo</li>
+                <li>Congo, Democratic Republic of</li>
+                <li>Djibouti</li>
+                <li>Egypt</li>
+                <li>Equatorial Guinea</li>
+                <li>Eritrea</li>
+                <li>Ethiopia</li>
+                <li>Gabon</li>
+                <li>Gambia</li>
+                <li>Ghana</li>
+                <li>Guinea</li>
+                <li>Guinea-Bissau</li>
+                <li>Ivory Coast</li>
+                <li>Kenya</li>
+                <li>Lesotho</li>
+                <li>Liberia</li>
+                <li>Libya</li>
+                <li>Madagascar</li>
+                <li>Malawi</li>
+                <li>Mali</li>
+                <li>Mauritania</li>
+                <li>Mauritius</li>
+                <li>Morocco</li>
+                <li>Mozambique</li>
+                <li>Namibia</li>
+                <li>Niger</li>
+                <li>Nigeria</li>
+                <li>Rwanda</li>
+                <li>Sao Tome and Principe</li>
+                <li>Senegal</li>
+                <li>Seychelles</li>
+                <li>Sierra Leone</li>
+                <li>Somalia</li>
+                <li>South Africa</li>
+                <li>South Sudan</li>
+                <li>Sudan</li>
+                <li>Swaziland</li>
+                <li>Tanzania</li>
+                <li>Togo</li>
+                <li>Tunisia</li>
+                <li>Uganda</li>
+                <li>Zambia</li>
+                <li>Zimbabwe</li>
+            </ul>
+        <h3>Asia</h3>
+            <ul>
+            <li>Afghanistan</li>
+            <li>Bahrain</li>
+            <li>Bangladesh</li>
+            <li>Bhutan</li>
+            <li>Brunei</li>
+            <li>Burma (Myanmar)</li>
+            <li>Cambodia</li>
+            <li>China</li>
+            <li>East Timor</li>
+            <li>India</li>
+            <li>Indonesia</li>
+            <li>Iran</li>
+            <li>Iraq</li>
+            <li>Israel</li>
+            <li>Japan</li>
+            <li>Jordan</li>
+            <li>Kazakhstan</li>
+            <li>Korea, North</li>
+            <li>Korea, South</li>
+            <li>Kuwait</li>
+            <li>Kyrgyzstan</li>
+            <li>Laos</li>
+            <li>Lebanon</li>
+            <li>Malaysia</li>
+            <li>Maldives</li>
+            <li>Mongolia</li>
+            <li>Nepal</li>
+            <li>Oman</li>
+            <li>Pakistan</li>
+            <li>Philippines</li>
+            <li>Qatar</li>
+            <li>Russian Federation</li>
+            <li>Saudi Arabia</li>
+            <li>Singapore</li>
+            <li>Sri Lanka</li>
+            <li>Syria</li>
+            <li>Tajikistan</li>
+            <li>Thailand</li>
+            <li>Turkey</li>
+            <li>Turkmenistan</li>
+            <li>United Arab Emirates</li>
+            <li>Uzbekistan</li>
+            <li>Vietnam</li>
+            <li>Yemen</li>
+        </ul>
+
+        <h3>Australia and Oceania</h3>
+            <ul>    
+                <li>Australia</li>
+                <li>Fiji</li>
+                <li>Kiribati</li>
+                <li>Marshall Islands</li>
+                <li>Micronesia</li>
+                <li>Nauru</li>
+                <li>New Zealand</li>
+                <li>Palau</li>
+                <li>Papua New Guinea</li>
+                <li>Samoa</li>
+                <li>Solomon Islands</li>
+                <li>Tonga</li>
+                <li>Tuvalu</li>
+                <li>Vanuatu</li>
+            </ul>
+
+        <h3>Europe</h3>
+            <ul>
+                <li>Albania</li>
+                <li>Andorra</li>
+                <li>Armenia</li>
+                <li>Austria</li>
+                <li>Azerbaijan</li>
+                <li>Belarus</li>
+                <li>Belgium</li>
+                <li>Bosnia and Herzegovina</li>
+                <li>Bulgaria</li>
+                <li>Croatia</li>
+                <li>Cyprus</li>
+                <li>Czech Republic</li>
+                <li>Denmark</li>
+                <li>Estonia</li>
+                <li>Finland</li>
+                <li>France</li>
+                <li>Georgia</li>
+                <li>Germany</li>
+                <li>Greece</li>
+                <li>Hungary</li>
+                <li>Iceland</li>
+                <li>Ireland</li>
+                <li>Italy</li>
+                <li>Latvia</li>
+                <li>Liechtenstein</li>
+                <li>Lithuania</li>
+                <li>Luxembourg</li>
+                <li>Macedonia</li>
+                <li>Malta</li>
+                <li>Moldova</li>
+                <li>Monaco</li>
+                <li>Montenegro</li>
+                <li>Netherlands</li>
+                <li>Norway</li>
+                <li>Poland</li>
+                <li>Portugal</li>
+                <li>Romania</li>
+                <li>San Marino</li>
+                <li>Serbia</li>
+                <li>Slovakia</li>
+                <li>Slovenia</li>
+                <li>Spain</li>
+                <li>Sweden</li>
+                <li>Switzerland</li>
+                <li>Ukraine</li>
+                <li>United Kingdom</li>
+                <li>Vatican City</li>
+            </ul>
+
+        <h3>North America</h3>
+            <ul>
+                <li>Antigua and Barbuda</li>
+                <li>Bahamas</li>
+                <li>Barbados</li>
+                <li>Belize</li>
+                <li>Canada</li>
+                <li>Costa Rica</li>
+                <li>Cuba</li>
+                <li>Dominica</li>
+                <li>Dominican Republic</li>
+                <li>El Salvador</li>
+                <li>Grenada</li>
+                <li>Guatemala</li>
+                <li>Haiti</li>
+                <li>Honduras</li>
+                <li>Jamaica</li>
+                <li>Mexico</li>
+                <li>Nicaragua</li>
+                <li>Panama</li>
+                <li>Saint Kitts and Nevis</li>
+                <li>Saint Lucia</li>
+                <li>Saint Vincent and the Grenadines</li>
+                <li>Trinidad and Tobago</li>
+                <li>United States</li>
+            </ul>
+
+        <h3>South America</h3> 
+            <ul>
+                <li>Argentina</li>
+                <li>Bolivia</li>
+                <li>Brazil</li>
+                <li>Chile</li>
+                <li>Colombia</li>
+                <li>Ecuador</li>
+                <li>Guyana</li>
+                <li>Paraguay</li>
+                <li>Peru</li>
+                <li>Suriname</li>
+                <li>Uruguay</li>
+                <li>Venezuela</li>
+            </ul>
+
+        <h3>Antarctica</h3>
+            <ul>
+                <li>n/a</li>
+            </ul>
+    </section>
+    <section class="sortSection" id="ByAlphabet">
+        <h2>Countries by Alphabet</h2>
+        <a name="sectionTop"></a>
+        <nav>
+            <ul>
+                <li><a href="#a">A</a></li>
+                <li><a href="#b">B</a></li>
+                <li><a href="#c">C</a></li>
+                <li><a href="#d">D</a></li>
+                <li><a href="#e">E</a></li>
+                <li><a href="#f">F</a></li>
+                <li><a href="#g">G</a></li>
+                <li><a href="#h">H</a></li>
+                <li><a href="#i">I</a></li>
+                <li><a href="#j">J</a></li>
+                <li><a href="#k">K</a></li>
+                <li><a href="#l">L</a></li>
+                <li><a href="#m">M</a></li>
+                <li><a href="#n">N</a></li>
+                <li><a href="#o">O</a></li>
+                <li><a href="#p">P</a></li>
+                <li><a href="#q">Q</a></li>
+                <li><a href="#r">R</a></li>
+                <li><a href="#s">S</a></li>
+                <li><a href="#t">T</a></li>
+                <li><a href="#u">U</a></li>
+                <li><a href="#v">V</a></li>
+                <li><a href="#w">W</a></li>
+                <li>X</li>
+                <li><a href="#y">Y</a></li>
+                <li><a href="#z">Z</a></li>    
+            </ul>
+        </nav>
+
+        <a name="a"></a>
+        <h3>A</h3>
+        <ul>
+            <li>Afghanistan</li>
+            <li>Albania</li>
+            <li>Algeria</li>
+            <li>Andorra</li>
+            <li>Angola</li>
+            <li>Antigua and Barbuda</li>
+            <li>Argentina</li>
+            <li>Armenia</li>
+            <li>Australia</li>
+            <li>Austria</li>
+            <li>Austrian Empire</li>
+            <li>Azerbaijan</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="b"></a>
+        <h3>B</h3>
+        <ul>
+            <li>Baden*</li>
+            <li>Bahamas, The</li>
+            <li>Bahrain</li>
+            <li>Bangladesh</li>
+            <li>Barbados</li>
+            <li>Bavaria*</li>
+            <li>Belarus</li>
+            <li>Belgium</li>
+            <li>Belize</li>
+            <li>Benin (Dahomey)</li>
+            <li>Bolivia</li>
+            <li>Bosnia and Herzegovina</li>
+            <li>Botswana</li>
+            <li>Brazil</li>
+            <li>Brunei</li>
+            <li>Brunswick and Lüneburg</li>
+            <li>Bulgaria</li>
+            <li>Burkina Faso (Upper Volta)</li>
+            <li>Burma</li>
+            <li>Burundi</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+        <a name="c"></a>
+        <h3>C</h3>
+        <ul>
+            <li>Cabo Verde</li>
+            <li>Cambodia</li>
+            <li>Cameroon</li>
+            <li>Canada</li>
+            <li>Cayman Islands, The</li>
+            <li>Central African Republic</li>
+            <li>Central American Federation*</li>
+            <li>Chad</li>
+            <li>Chile</li>
+            <li>China</li>
+            <li>Colombia</li>
+            <li>Comoros</li>
+            <li>Congo Free State, The</li>
+            <li>Costa Rica</li>
+            <li>Cote d’Ivoire (Ivory Coast)</li>
+            <li>Croatia</li>
+            <li>Cuba</li>
+            <li>Cyprus</li>
+            <li>Czechia</li>
+            <li>Czechoslovakia</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+        <a name="d"></a>
+        <h3>D</h3>
+        <ul>
+            <li>Democratic Republic of the Congo</li>
+            <li>Denmark</li>
+            <li>Djibouti</li>
+            <li>Dominica</li>
+            <li>Dominican Republic</li>
+            <li>Duchy of Parma, The*</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="e"></a>
+        <h3>E</h3>
+        <ul>
+            <li>East Germany (German Democratic Republic)</li>
+            <li>Ecuador</li>
+            <li>Egypt</li>
+            <li>El Salvador</li>
+            <li>Equatorial Guinea</li>
+            <li>Eritrea</li>
+            <li>Estonia</li>
+            <li>Eswatini</li>
+            <li>Ethiopia</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+        <a name="f"></a>
+        <h3>F</h3>
+        <ul>
+            <li>Federal Government of Germany (1848-49)*</li>
+            <li>Fiji</li>
+            <li>Finland</li>
+            <li>France</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="g"></a>
+        <h3>G</h3>
+        <ul>
+            <li>Gabon</li>
+            <li>Gambia, The</li>
+            <li>Georgia</li>
+            <li>Germany</li>
+            <li>Ghana</li>
+            <li>Grand Duchy of Tuscany, The*</li>
+            <li>Greece</li>
+            <li>Grenada</li>
+            <li>Guatemala</li>
+            <li>Guinea</li>
+            <li>Guinea-Bissau</li>
+            <li>Guyana</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+        <a name="h"></a>
+        <h3>H</h3>
+        <ul>
+            <li>Haiti</li>
+            <li>Hanover*</li>
+            <li>Hanseatic Republics*</li>
+            <li>Hawaii*</li>
+            <li>Hesse*</li>
+            <li>Holy See</li>
+            <li>Honduras</li>
+            <li>Hungary</li>
+        </ul>      
+        <a href="#sectionTop">Section top</a>
+
+        <a name="i"></a>
+        <h3>I</h3>
+        <ul>
+            <li>Iceland</li>
+            <li>India</li>
+            <li>Indonesia</li>
+            <li>Iran</li>
+            <li>Iraq</li>
+            <li>Ireland</li>
+            <li>Israel</li>
+            <li>Italy</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+        <a name="j"></a>
+        <h3>J</h3>
+        <ul>
+            <li>Jamaica</li>
+            <li>Japan</li>
+            <li>Jordan</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="k"></a>
+        <h3>K</h3>
+        <ul>
+            <li>Kazakhstan</li>
+            <li>Kenya</li>
+            <li>Kingdom of Serbia/Yugoslavia*</li>
+            <li>Kiribati</li>
+            <li>Korea</li>
+            <li>Kosovo</li>
+            <li>Kuwait</li>
+            <li>Kyrgyzstan</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="l"></a>
+        <h3>L</h3>
+        <ul>
+            <li>Laos</li>
+            <li>Latvia</li>
+            <li>Lebanon</li>
+            <li>Lesotho</li>
+            <li>Lew Chew (Loochoo)*</li>
+            <li>Liberia</li>
+            <li>Libya</li>
+            <li>Liechtenstein</li>
+            <li>Lithuania</li>
+            <li>Luxembourg</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+        <a name="m"></a>
+        <h3>M</h3>
+        <ul>
+            <li>Madagascar</li>
+            <li>Malawi</li>
+            <li>Malaysia</li>
+            <li>Maldives</li>
+            <li>Mali</li>
+            <li>Malta</li>
+            <li>Marshall Islands</li>
+            <li>Mauritania</li>
+            <li>Mauritius</li>
+            <li>Mecklenburg-Schwerin*</li>
+            <li>Mecklenburg-Strelitz*</li>
+            <li>Mexico</li>
+            <li>Micronesia</li>
+            <li>Moldova</li>
+            <li>Monaco</li>
+            <li>Mongolia</li>
+            <li>Montenegro</li>
+            <li>Morocco</li>
+            <li>Mozambique</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        <a name="n"></a>
+        <h3>N</h3>
+        <ul>
+            <li>Namibia</li>
+            <li>Nassau*</li>
+            <li>Nauru</li>
+            <li>Nepal</li>
+            <li>Netherlands, The</li>
+            <li>New Zealand</li>
+            <li>Nicaragua</li>
+            <li>Niger</li>
+            <li>Nigeria</li>
+            <li>North German Confederation*</li>
+            <li>North German Union*</li>
+            <li>North Macedonia</li>
+            <li>Norway</li>
+        </ul>    
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="o"></a>
+        <h3>O</h3>
+        <ul>
+            <li>Oldenburg*</li>
+            <li>Oman</li>
+            <li>Orange Free State*</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        <a name="p"></a>
+        <h3>P</h3>
+        <ul> 
+            <li>Pakistan</li>
+            <li>Palau</li>
+            <li>Panama</li>
+            <li>Papal States*</li>
+            <li>Papua New Guinea</li>
+            <li>Paraguay</li>
+            <li>Peru</li>
+            <li>Philippines</li>
+            <li>Piedmont-Sardinia*</li>
+            <li>Poland</li>
+            <li>Portugal</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="q"></a>
+        <h3>Q</h3>
+        <ul>
+            <li>Qatar</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="r"></a>
+        <h3>R</h3>
+        <ul>
+            <li>Republic of Genoa*</li>
+            <li>Republic of Korea (South Korea)</li>
+            <li>Republic of the Congo</li>
+            <li>Romania</li>
+            <li>Russia</li>
+            <li>Rwanda</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        <a name="s"></a>
+        <h3>S</h3>
+        <ul>
+            <li>Saint Kitts and Nevis</li>
+            <li>Saint Lucia</li>
+            <li>Saint Vincent and the Grenadines</li>
+            <li>Samoa</li>
+            <li>San Marino</li>
+            <li>Sao Tome and Principe</li>
+            <li>Saudi Arabia</li>
+            <li>Schaumburg-Lippe*</li>
+            <li>Senegal</li>
+            <li>Serbia</li>
+            <li>Seychelles</li>
+            <li>Sierra Leone</li>
+            <li>Singapore</li>
+            <li>Slovakia</li>
+            <li>Slovenia</li>
+            <li>Solomon Islands, The</li>
+            <li>Somalia</li>
+            <li>South Africa</li>
+            <li>South Sudan</li>
+            <li>Spain</li>
+            <li>Sri Lanka</li>
+            <li>Sudan</li>
+            <li>Suriname</li>
+            <li>Sweden</li>
+            <li>Switzerland</li>
+            <li>Syria</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="t"></a>
+        <h3>T</h3>
+        <ul>    
+        <li>Tajikistan</li>
+            <li>Tanzania</li>
+            <li>Texas*</li>
+            <li>Thailand</li>
+            <li>Timor-Leste</li>
+            <li>Togo</li>
+            <li>Tonga</li>
+            <li>Trinidad and Tobago</li>
+            <li>Tunisia</li>
+            <li>Turkey</li>
+            <li>Turkmenistan</li>
+            <li>Tuvalu</li>
+            <li>Two Sicilies*</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="u"></a>
+        <h3>U</h3>
+        <ul>
+            <li>Uganda</li>
+            <li>Ukraine</li>
+            <li>Union of Soviet Socialist Republics*</li>
+            <li>United Arab Emirates, The</li>
+            <li>United Kingdom, The</li>
+            <li>Uruguay</li>
+            <li>Uzbekistan</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        
+        <a name="v"></a>
+        <h3>V</h3>
+        <ul>
+            <li>Vanuatu</li>
+            <li>Venezuela</li>
+            <li>Vietnam</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+        <a name="w"></a>
+        <h3>W</h3>
+        <ul>
+            <li>Württemberg*</li>
+        </ul>
+
+        <a href="#sectionTop">Section top</a>
+        <a name="y"></a>
+        <h3>Y</h3>
+        <ul>
+            <li>Yemen</li>
+        </ul>
+        <a href="#sectionTop">Section top</a>
+
+
+        <a name="z"></a>
+        <h3>Z</h3>
+        <ul>
+            <li>Zambia</li>
+            <li>Zimbabwe</li>    
+        </ul>
+            
+        <a href="#sectionTop">Section top</a>
+    </section>
+    <section class="sortSection" id="ByVisited">
+        <h2>Countries Visited</h2>
+    </section>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
