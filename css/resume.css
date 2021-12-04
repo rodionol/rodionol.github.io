@@ -66,7 +66,7 @@ h2 {
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-    text-transform: underline;
+    text-transform: underline !important;
 }
 
 @media (min-width: 992px) {
